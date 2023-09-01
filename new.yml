@@ -1,0 +1,7 @@
+- hosts: Worker-02
+  tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /root/ansible-file/Worker-01
+        dest: /root/techie/Worker-02
+      delegate_to: Worker-01
